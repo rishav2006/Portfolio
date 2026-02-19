@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+
+@font-face {
+  font-family: 'Helvetica-Neue'; /* Choose a name for your font */
+  src: url('./fonts/HelveticaNeueRoman.otf') format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica-Neue'; /* Choose a name for your font */
+  src: url('./fonts/HelveticaNeueMedium.otf') format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica-Neue'; /* Choose a name for your font */
+  src: url('./fonts/HelveticaNeueBold.otf') format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica-Neue'; /* Choose a name for your font */
+  src: url('./fonts/HelveticaNeueHeavy.otf') format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica-Neue'; /* Choose a name for your font */
+  src: url('./fonts/HelveticaNeueLight.otf') format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica-Neue'; /* Choose a name for your font */
+  src: url('./fonts/HelveticaNeueThin.otf') format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+*{
+  font-family: Helvetica-Neue;
+  font-weight: 500;
+}
+
+.font-med{
+  font-family: Helvetica-Neue;
+  font-weight: 600;
+}
+
+.grid-bg {
+  position: relative;
+  background-color: #0c0c0c; /* your page bg */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
