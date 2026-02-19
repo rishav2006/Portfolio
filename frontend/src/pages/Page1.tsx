@@ -6,7 +6,7 @@ const Page1 = () => {
   return (
     <div>
       <Navbar/>
-      <div className='grid-bg h-screen flex justify-center lg:pt-25 px-7'>
+      <div className='grid-bg h-screen flex justify-center pt-33 lg:pt-50 px-5'>
         <LandingPart/>
       </div>
     </div>
