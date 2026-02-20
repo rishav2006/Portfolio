@@ -1,16 +1,26 @@
 import React from 'react'
 
-const ProjectList = () => {
+type MediumCard2Props = {
+  image: string;
+};
+
+const ProjectList = ({image}: MediumCard2Props) => {
+    
   return (
-    <>
-      <a className='w-90 lg:w-110 flex flex-col gap-2 justify-center items-center' href=''>
-        <img src="https://t3.ftcdn.net/jpg/03/22/30/46/360_F_322304683_7ysRarFkmy2osfPKTOYQv7qTPofKelfb.jpg" alt="" className='w-110 h-70 rounded-3xl'/>
-        <div className='flex flex-col pt-3'>
-            <h4 className='text-3xl font-med'>This is just a Demo Title</h4>
-            <p className='text-xl lg:text-[17px] text-zinc-400 w-90 lg:w-110'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa natus illum reiciendis, similique necessitatibus repellendus repellat atque sint dolorem, possimus aspernatur. Est ut repellat soluta illum et error magnam at similique. Repellendus libero culpa placeat doloribus optio consectetur dolore aliquam fuga at saepe ipsam nisi aspernatur porro.</p>
+    <div className='min-h-80 min-w-90 max-w-97 bg-zinc-900 rounded-2xl border-2 border-zinc-800 p-5 flex flex-col items-center transition-transform transition-shadow duration-280 ease-out transform-gpu hover:shadow-xl/5 hover:-translate-y-1'>
+      <img src={image} alt="" className='w-250 h-35 object-cover rounded-md mb-3'/>
+      <div className='flex flex-col gap-0.5'>
+        <h2 className='text-xl font-med'>Tokyo: Experience typical Japanese Culture.</h2>
+        <p className='font-light text-zinc-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nemo iste maiores ea reiciendis esse expedita facilis ratione sapiente reprehenderit!</p>
+      </div>
+      <div className='w-85 h-[1px] bg-zinc-500 opacity-15 my-4'></div>
+      <div className='flex justify-between w-full h-10'>
+        <div className='flex items-center gap-2'>
+            <p className='text-md'>Full-Stack Project</p>
         </div>
-      </a>
-    </>
+        <button className='bg-zinc-800 px-5 rounded-lg cursor-pointer text-white text-md'>View Project</button>
+      </div>
+    </div>
   )
 }
 
