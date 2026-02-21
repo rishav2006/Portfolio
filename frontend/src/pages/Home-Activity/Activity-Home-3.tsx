@@ -1,5 +1,5 @@
 import React from 'react'
-import TextSync from '../components/TextSync'
+import TextSync from '../../components/TextSync'
 
 const Page3 = () => {
   return (

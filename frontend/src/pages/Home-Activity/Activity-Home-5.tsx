@@ -1,5 +1,5 @@
 import React from 'react'
-import InteractiveBanner from '../components/InteractiveBanner'
+import InteractiveBanner from '../../components/InteractiveBanner'
 
 const Page5 = () => {
   return (

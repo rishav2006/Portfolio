@@ -1,6 +1,6 @@
 import React from 'react'
-import SkillComp from '../components/SkillComp'
-import { logos } from '../data/SkillsLogo'
+import SkillComp from '../../components/SkillComp'
+import { logos } from '../../data/SkillsLogo'
 
 const Page4 = () => {
   return (
