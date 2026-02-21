@@ -5,7 +5,6 @@ import logo from '../../images/Logo-Demo.png'
 const Page1 = () => {
   return (
     <div className="w-full h-110 lg:h-100 grid-bg-1">
-    <Navbar />
 
   <div className="pt-30 lg:pt-40 px-8 lg:px-30">
     <div className="flex items-center justify-center">

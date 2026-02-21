@@ -6,10 +6,13 @@ import Images from '../components/Images'
 import FAQlist from '../components/FAQlist'
 import TechStack from '../components/TechStack'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 const Project = () => {
   return (
     <div className=''>
+      
+    <Navbar/>
       <Page1/>
       <Highlights/>
       <Description/>
