@@ -1,8 +1,22 @@
+import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const AdminNavbar = () => {
   const [open, setOpen] = useState(false);
+  const navigator = useNavigate();
+  const logoutHandler = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("/api/admin/logout", {}, {
+        withCredentials: true
+      });
+      console.log("Logout Successful");
+      navigator("/login");
+    } catch (error) {
+      console.log("An error happened: " + error.message);
+    }
+  };
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 text-white backdrop-blur-md bg-black/1 0 border-b border-white/10">
@@ -10,9 +24,7 @@ const Navbar = () => {
           <Link to={'/'}>Rishav Pattnaik.</Link>
 
           <ul className="hidden lg:flex gap-4">
-            <Link to='/projects' className="transition-transform transition-shadow duration-300 ease-out transform-gpu hover:shadow-xl/5 hover:-translate-y-0.5">Projects.</Link>
-            <Link to='/connect' className="transition-transform transition-shadow duration-300 ease-out transform-gpu hover:shadow-xl/5 hover:-translate-y-0.5">Connect with me.</Link>
-            <Link to='/about' className="transition-transform transition-shadow duration-300 ease-out transform-gpu hover:shadow-xl/5 hover:-translate-y-0.5">About myself.</Link>
+            <a href="" onClick={() => setOpen(false)} className = "transition-transform transition-shadow duration-300 ease-out transform-gpu hover:shadow-xl/5 hover:-translate-y-0.5 text-red-400">Logout.</a>
           </ul>
 
           <button
@@ -29,9 +41,7 @@ const Navbar = () => {
         className={`fixed inset-0 z-40 lg:hidden backdrop-blur-xl transition-all duration-300 ease-out ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
         <div className={`absolute top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-sm backdrop-blur-2xl p-6 transition-all duration-300 ease-out transform-gpu ${open ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"}`}>
           <ul className="flex flex-col gap-4 text-lg">
-            <Link to='/projects' onClick={() => setOpen(false)} className = "transition-transform duration-300 ease-out hover:-translate-y-0.5 text-white text-3xl">Projects.</Link>
-            <Link to='' onClick={() => setOpen(false)} className = "transition-transform duration-300 ease-out hover:-translate-y-0.5 text-white text-3xl">Connect with me.</Link>
-            <Link to='/about' onClick={() => setOpen(false)} className = "transition-transform duration-300 ease-out hover:-translate-y-0.5 text-white text-3xl">About myself.</Link>
+            <button onClick={logoutHandler} className = "transition-transform duration-300 ease-out hover:-translate-y-0.5 text-red-400 text-3xl">Logout.</button>
           </ul>
         </div>
       </div>
@@ -41,4 +51,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AdminNavbar;
